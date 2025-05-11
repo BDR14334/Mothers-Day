@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Mother's Day</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Images around the letter -->
+  <div class="images">
+    <img src="mom.JPG" class="image image1" alt="Image 1"> 
+    <img src="grad.jpg" class="image image2" alt="Image 2">
+    <img src="brandnmom.jpg" class="image image3" alt="Image 3">
+    <img src="restuarant.jpg" class="image image4" alt="Image 4">
+    <img src="wedding.jpg" class="image image5" alt="Image 5"> 
+    <img src="office.jpg" class="image image6" alt="Image 6">
+  </div>
+
+  <div class="container">
+    <section class="letter">
+      <header>
+        <h1>Happy Mother's Day, <span class="highlight">Mom</span>!</h1>
+        <h3>Isaiah 66:13</h3>
+      </header>
+
+      <p>
+        Mom,  
+        <br><br>
+        I just want to take a moment to say how much I love you, Mom, and to thank you for everything you’ve done and continue to do for me. From the time I was a toddler to now as an adult, you have always been there supporting me through every phase, no matter what state I was in. Whether I was cheerful and bubbly or going through a rough patch, your love never wavered.  
+        <br><br>
+        I’m incredibly grateful for your patience, your strength, and your unwavering kindness. Every sacrifice you’ve made big or small has never gone unnoticed, even if I haven’t always said it out loud. You’ve given so much of yourself to help shape who I am, and I’ll forever be thankful for that.  
+        <br><br>
+        As you enter this next chapter in your life, I truly hope it brings you joy, growth, and even greater opportunities. Keep putting your heart into your craft the way you’ve always poured your heart into raising and supporting me. I can’t wait to see where this path takes you because you deserve it.
+        <br><br>
+        <strong>Your Son, Brandon</strong>  
+      </p>
+
+      <footer>
+        <p>I love you so much, Mom. I hope you have a beautiful day.❤️</p>
+      </footer>
+    </section>
+
+    <!-- Slideshow for mobile view -->
+    <div class="slideshow">
+      <div class="slide-track">
+        <div class="slide"><img src="mom.JPG" alt="Image 1"></div>
+        <div class="slide"><img src="grad.jpg" alt="Image 2"></div>
+        <div class="slide"><img src="brandnmom.jpg" alt="Image 3"></div>
+        <div class="slide"><img src="restuarant.jpg" alt="Image 4"></div>
+        <div class="slide"><img src="wedding.jpg" alt="Image 5"></div>
+        <div class="slide"><img src="office.jpg" alt="Image 6"></div>
+        <div class="slide"><img src="white house.jpg" alt="Image 7"></div>
+        <div class="slide"><img src="gap.jpg" alt="Image 8"></div>
+        <div class="slide"><img src="me.jpg" alt="Image 9"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'prev');
+        if (i === index) {
+          slide.classList.add('active');
+        } else if (i === (index - 1 + slides.length) % slides.length) {
+          slide.classList.add('prev');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Change slide every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Allow clicking on an image to move to the next slide
+    slides.forEach(slide => {
+      slide.addEventListener('click', nextSlide);
+    });
+
+    showSlide(currentSlide);
+
+  </script>
+</body>
+</html>
+
